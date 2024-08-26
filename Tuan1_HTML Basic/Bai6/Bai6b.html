@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        div {
+            margin-top: 20px;
+            width: 600px;
+        }
+
+        form {
+            width: 130%;
+            margin-top: 90px;
+            border: 1px solid blue;
+            padding-left: 3px;
+            padding-right: 8px;
+            padding-bottom: 25px;
+            padding-top: 1px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            margin-left: -5px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 700px;
+            border-collapse: collapse;
+
+            margin-left: 3px;
+            margin-right: 7px;
+        }
+
+        legend {
+            padding-top: -100px;
+            margin-left: 2px;
+            padding-bottom: 3px;
+        }
+
+        .f2 {
+            margin-top: -18px;
+        }
+
+        .td2 {
+            padding-right: 210px;
+        }
+
+        .td22 {
+            padding-right: 80px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="/submit" method="post">
+            <h1>Contact Us</h1>
+            <fieldset class="f1">
+                <legend>Your message: </legend>
+                <table>
+                    <tr>
+                        <td class="td1">To</td>
+                        <td class="td2"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Your email</td>
+                        <td class="td2"><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Message </td>
+                        <td class="td2"><textarea name="" id="" cols="52" rows="10"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Attach File</td>
+                        <td class="td2"><input type="file" id="file" name="file" value="Choose File" ></td>
+                    </tr>
+                </table>
+            </fieldset><br>
+            <fieldset class="f2">
+                <legend>How you found us:</legend>
+                <table>
+                    <tr>
+                        <td class="td12">How did you hear of us</td>
+                        <td class="td22">
+                            <select name="" id="">
+                                <option value="Google">Google</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Advertisement">Advertisement</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td12">Newsletter</td>
+
+                        <td class="td22">&nbsp;<input type="checkbox" name="" id="">Ensure this box is checked if you
+                            would like to receive email updates</td>
+                    </tr>
+                </table>
+            </fieldset>
+            <input type="submit" value="Send message">
+        </form>
+    </div>
+</body>
+
+</html>

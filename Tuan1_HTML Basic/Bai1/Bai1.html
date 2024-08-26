@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuần 1 bài 1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+
+      div {
+        width: 300px;
+        padding-left: 10px;
+        margin-top: 20px;
+        border: 1px solid gainsboro;
+        box-shadow: 4px 4px 4px rgb(168, 167, 167),
+          -4px -4px 4px rgb(168, 167, 167);
+      }
+
+      .menu-section {
+        line-height: 2;
+      }
+
+      .menu-item {
+        font-size: 12.2px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h2 class="menu-section">Example Cafe Menu</h2>
+      <a href="#Starters">Starters</a>
+      <span> | </span>
+      <a href="#Main Courses">Main Courses</a>
+      <span> | </span>
+      <a href="#Desserts">Desserts</a>
+      <h2 id="Starters" class="menu-section">Starters</h2>
+      <ul>
+        <li class="menu-item">
+          Chestnut and Mushroom Goujons (<a href="#v">v</a>)
+        </li>
+        <li class="menu-item">Goat Cheese Salad (<a href="#v">v</a>)</li>
+        <li class="menu-item">Honey Soy Chicken Kebabs</li>
+        <li class="menu-item">Seafood Salad</li>
+      </ul>
+      <a href="#" class="menu-section">Back to top</a>
+      <h2 id="Main Courses" class="menu-section">Main Courses</h2>
+      <ul>
+        <li class="menu-item">
+          Spinach and Ricotta Roulade (<a href="#v">v</a>)
+        </li>
+        <li class="menu-item">Beef Tournados with Mustard and Dill Sauce</li>
+        <li class="menu-item">Roast Chicken Salad</li>
+        <li class="menu-item">Icelandic Cod with Parsley Sauce</li>
+        <li class="menu-item">Mushroom Wellington (<a href="#v">v</a>)</li>
+      </ul>
+      <a href="#" class="menu-section">Back to top</a>
+      <h2 id="Desserts" class="menu-section">Desserts</h2>
+      <ul>
+        <li class="menu-item">Lemon Sorbet (<a href="#v">v</a>)</li>
+        <li class="menu-item">Chocolate Mud Pie (<a href="#v">v</a>)</li>
+        <li class="menu-item">Pecan Pie (<a href="#v">v</a>)</li>
+        <li class="menu-item">
+          Selection of Fine Cheeses from Around the World
+        </li>
+      </ul>
+      <a href="#" class="menu-section">Back to top</a>
+      <p class="menu-item">
+        Items marked with a (<span id="v">v</span>) are suitable for
+        vegetarians.
+      </p>
+    </div>
+  </body>
+</html>

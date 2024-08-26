@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <style>
+         * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        div {
+            margin-top: 20px; 
+            width: 600px;
+           
+        }
+        form {
+            width: 50%; 
+            margin-top: 90px;
+            border: 1px solid blue;
+            padding-left: 7px;
+            padding-right: 10px;
+            padding-bottom: 8px;
+            padding-top: 1px;
+        }
+        .divmin{
+            border: 1px solid rgb(196, 187, 178);
+            width: 280px;
+            margin-top: 1px;
+            margin-right: 10px;
+        }
+        .tb2{
+            border: 1px solid blue;
+            width: 255px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .td1{
+            padding-top: 9px;
+            padding-right: 85px;
+        }
+        .td2{
+            padding-top: 9px;
+            padding-left: 10px;
+        }
+        td{
+            text-align: center;
+        }
+        #sm{
+            margin-top: 15px;
+            margin-left: 80px;
+        }
+        #n, #tn, #e, #cl{
+            margin-bottom: 17px;
+        }
+    </style>
+</head>
+<body>
+     <div>
+         <form action="">
+            <label for="name">Name:</label><br>
+            <input type="text" name="n" id="n"><br>
+            <label for="phonenumber">Telephone Number:</label><br>
+            <input type="text" name="tn" id="tn"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" name="e" id="e"><br>
+            <label for="fcolor">Favorite Color:</label><br>
+            <input type="color" name="cl" id="cl" value="#0000FF"><br>
+            <label for="birth">Date of Birth:</label><br>
+            <input type="date" name="d" id="d" value="2015-07-16"> <br>
+            <div class="divmin">
+                <table class="tb1">
+                    <tr>
+                        <td class="td1">    
+                            <select name="year" id="year" style="border: 0;">
+                                <option value="1">July 2015</option>
+                            </select> 
+                        </td>
+                        <td class="td2">
+                            <input type="submit" value="&#60;" style="color: rgb(109, 108, 106);">
+                            <input type="submit" value="&#9679;" style="color: rgb(109, 108, 106);" >
+                            <input type="submit" value="&#62;" style="color: rgb(109, 108, 106);">
+                        </td>
+                    </tr>
+                </table>
+                <table class="tb2">
+                    <tr>
+                        <td >Sun</td>
+                        <td >Mon</td>
+                        <td >Tue</td>
+                        <td >Wed</td>
+                        <td >Thu</td>
+                        <td >Fri</td>
+                        <td >Sat</td>             
+                    </tr>
+                    <tr>
+                        <td colspan="7"><hr width="100%"></td>
+                    </tr>
+                    <tr>
+                        <td style="color: rgb(196, 187, 178);" >28</td>
+                        <td style="color: rgb(196, 187, 178);" >29</td>
+                        <td style="color: rgb(196, 187, 178);" >30</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>  
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td style="color: rgb(196, 187, 178);">1</td>
+                    </tr>    
+                </table> 
+                
+            </div>  
+            <input type="submit" value="Submit" name="sm" id="sm"> 
+         </form>
+     </div>
+</body>
+</html>

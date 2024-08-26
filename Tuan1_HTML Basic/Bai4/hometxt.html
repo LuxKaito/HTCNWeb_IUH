@@ -1,0 +1,80 @@
+<html>
+<head>
+
+   <!-- New Perspectives on HTML and XHTML 5th Edition
+   Tutorial 2
+   Case Problem 3
+
+   Diamond Health Club Home Page
+   Author:
+   Date:
+
+   Filename:         home.htm
+   Supporting files: diamond.jpg -->
+
+
+<title>Diamond Health Club of Seattle</title>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    .d{
+        width: 810px;
+        height: 435px;
+        border: 2px solid black;
+        padding-left: 6px;
+        margin-top: 100px;
+    }
+    hr{
+        width: 800px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    h1{
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    p{
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    img{
+        width: 70%;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+    <div class="d">
+        <img src="./IMAGE/diamond.jpg" alt="Diamond" width="548px" height="150px" usemap="#diamondmap">
+        <map id="diamondmap" name="diamond map">
+            <area shape="rect" coords="225,7,333,40" href="class.html" alt="Classes" title="View our classes">
+            <area shape="rect" coords="258,44,437,82" href="member.html" alt="Member Ships" title="View our membership options">
+            <area shape="default" coords="0,0,x,y" href="index.html" alt="Home Page" title="Return to the Home page">
+        </map>
+        <hr>   
+
+        <h1>We've Moved!</h1>
+        <p>The Diamond Health Club Web site has moved. You will be redirected 
+        within a few seconds to the new site. Please update your links and 
+        bookmarks.</p>
+        <p>If you are not redirected, please click
+        this link to our new Web site.</p>
+
+        <hr>
+        <div class="d1">
+            <b>Diamond Health Club &#9830;
+            4317 Alvin Way &#9830;
+            Boise, ID 83701 &#9830;
+            (208) 555-4398</b>
+            <br>
+            <i>
+                Your Year-Round Source for Fun Family Health
+            </i>
+        </div>
+    </div>
+</body>
+</html>

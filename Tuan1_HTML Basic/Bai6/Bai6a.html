@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 640px;
+            height: 680px;
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+
+        div {
+            background-color: rgb(152, 204, 254);
+            margin-top: 20px;
+            width: 640px;
+            height: 680px;
+        }
+
+        .r {
+            padding-top: 12px;
+        }
+
+        img {
+            width: 300px;
+            margin-top: -3px;
+        }
+
+        #b1,
+        #b2 {
+            border-radius: 5px;
+        }
+
+        .c1 {
+            padding-left: 60px;
+        }
+
+        hr {
+            margin-left: 60px;
+            margin-right: 48px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            border: 1px solid gray;
+        }
+
+        select {
+            padding-right: 15px;
+        }
+
+        .rd,
+        .rd1,
+        .cb,
+        .cb1 {
+            vertical-align: top;
+        }
+
+        .cm,
+        .sys,
+        .uf {
+            vertical-align: top;
+            padding-left: 60px;
+            margin-right: 10px;
+            height: 1px;
+        }
+
+        #txta {
+            margin-top: 3px;
+            margin-right: 40px;
+            width: 330px;
+            height: 100px;
+        }
+
+        .td3 {
+            padding-right: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="/submit" method="post">
+            <table>
+                <tr>
+                    <td colspan="3" align="center">
+                        <img src="./IMAGE/img_bai6.png" alt="img_bai6">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <h2>Registration Form</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center" class="r">
+                        Register your Jackson Electronics product here
+                    </td>
+                </tr>
+                <tr>
+                    <td class="c1">First Name:</td>
+                    <td><input type="text" name="fname" id="fname" size="10"></td>
+                    <td class="td3">Last Name: <input type="text" name="lname" id="lname" size="10"></td>
+                </tr>
+                <tr>
+                    <td class="c1">Address #1:</td>
+                    <td colspan="2"><input type="text" name="ar1" id="ar1" size="24"></td>
+                </tr>
+                <tr>
+                    <td class="c1">Address #2:</td>
+                    <td colspan="2"><input type="text" name="ar2" id="ar2" size="24"></td>
+                </tr>
+                <tr>
+                    <td class="c1">City:</td>
+                    <td colspan="2"><input type="text" name="c" id="c" size="14">
+                        State: <input type="text" name="c" id="c" size="1">
+                        Zip: <input type="text" name="c" id="c" size="5"></td>
+
+                </tr>
+                <tr>
+                    <td class="c1">Country:</td>
+                    <td colspan="2"><input type="text" name="c" id="c" value="United States" size="14"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="c1">Product:</td>
+                    <td>
+                        <select name="product" id="product">
+                            <option value="ScanMaster">ScanMaster</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="c1">Date Purchased:</td>
+                    <td colspan="2"><input type="text" name="dp" id="dp" size="14"></td>
+                </tr>
+                <tr>
+                    <td class="c1">Serial#:</td>
+                    <td colspan="2"><input type="text" name="s" id="s" size="14"></td>
+                </tr>
+                <tr>
+                    <td class="uf">Used for:</td>
+                    <td class="rd">
+                        <input type="radio" name="textu" id="textu"> Home <br>
+                        <input type="radio" name="textu" id="textu" value="business" checked> Business <br>
+                        <input type="radio" name="textu" id="textu"> Govemment
+                    </td>
+                    <td class="rd1">
+                        <input type="radio" name="txtu" id="txtu"> Educational Institution <br>
+                        <input type="radio" name="txtu" id="txtu"> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td class="sys">System (check all that apply):</td>
+                    <td class="cb">
+                        <input type="checkbox" name="texts" id="texts"> Windows <br>
+                        <input type="checkbox" name="texts" id="texts"> Macintosh
+                    </td>
+                    <td class="cb1">
+                        <input type="checkbox" name="txts" id="txts"> UNIX <br>
+                        <input type="checkbox" name="txts" id="txts"> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cm">Comments?</td>
+                    <td colspan="2">
+                        <textarea name="txta" id="txta" cols="35" rows="7"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type="button" value="Click to register" id="b1">
+                        <input type="reset" value="Click to cancel" id="b2">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
