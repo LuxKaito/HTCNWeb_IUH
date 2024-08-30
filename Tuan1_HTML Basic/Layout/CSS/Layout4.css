@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(123, 189, 250);
+    margin: auto;
+    border: black solid;
+}
+
+.giua {
+    width: 100%;
+    height: 70%;
+    border-bottom: black solid;
+}
+
+.header {
+    width: 100%;
+    height: 15%;
+    border-bottom: black solid;
+}
+
+.nav {
+    width: 30%;
+    height: 100%;
+    border-right: black solid;
+    float: left;
+}
+
+.article {
+    width: 97%;
+    height: 90%;
+    border: black solid;
+    background-color: blanchedalmond;
+    margin: auto;
+}
+
+.section {
+    width: 70%;
+    height: 100%;
+    float: right;
+}
+
+.footer {
+    width: 100%;
+    height: 15%;
+}
