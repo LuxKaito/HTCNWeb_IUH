@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        html {
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .web-right.col-9 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .wr-title {
+            font-size: 30px;
+            font-weight: 700;
+            padding-bottom: 15px;
+        }
+
+        .web-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px 40px;
+        }
+
+        a.wl-menu-item {
+            padding: 7px 0px;
+        }
+
+        .web-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wr-menu {
+            font-weight: 700;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #c0c5cc;
+            padding-bottom: 15px;
+        }
+
+        .web-footer {
+            width: 100%;
+            background-color: #0000ff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .web-footer p {
+            color: aliceblue;
+            font-weight: 700;
+            margin: 0px;
+        }
+
+        .errMSG {
+            color: red;
+        }
+
+        .modal-body p {
+            display: flex;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <img src="../image/banner2.png" alt="">
+    <div class="web-body row">
+        <div class="web-left col-2">
+            <a href="" class="wl-menu-item">Trang chu</a>
+            <a href="" class="wl-menu-item">Xuat kho</a>
+            <a href="" class="wl-menu-item" data-bs-toggle="modal" data-bs-target="#warehouseModal">Nhap kho</a>
+            <a href="" class="wl-menu-item">Lien he</a>
+        </div>
+        <div class="web-right col-10">
+            <div class="wr-title">Danh sách phiếu nhập kho</div>
+            <table class="table" border="1" id="myTable">
+                <tr>
+                    <th>Số tt</th>
+                    <th>Ngày nhập kho</th>
+                    <th>Phiếu nhập số</th>
+                    <th>Tên mặt hàng</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="web-footer">
+        <p>MASV: 22710921 / Ho TEN: Nguyễn Huy Khang / Lop: DHHTTT</p>
+    </div>
+
+    <div class="modal fade" id="warehouseModal" tabindex="-1" aria-labelledby="warehouseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="warehouseModalLabel">PHIẾU NHẬP KHO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="receiptNumber" class="form-label">Phiếu nhập số</label>
+                            <input class="form-control" id="inp_phieuNhapSo" type="text" name="" id="">
+                            <span class="errMSG" id="txt_phieuNhapSo">(*)</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="warehouseCode" class="form-label">Mã nhập kho</label>
+                            <input class="form-control" id="inp_maNhapKho" type="text" name="" id="">
+                            <span class="errMSG" id="txt_maNhapKho">(*)</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemName" class="form-label">Tên mặt hàng</label>
+                            <input class="form-control" id="inp_tenMatHang" type="text" name="" id="">
+                            <span class="errMSG" id="txt_tenMatHang">(*)</span>
+                        </div>
+                    </form>
+                    <p>MASV: 22710921 / Ho TEN: Nguyễn Huy Khang / Lop: DHHTTT</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="submit_btn" class="btn btn-success">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function focus_input(ten) {
+            $('#' + ten).focus();
+        }
+
+        $(document).ready(function () {
+
+            function checkPhieuNhapSo() {
+                var name = $("#inp_phieuNhapSo").val();
+                var nameRegex = /^NK\d{3}-(0[1-9]|1[0-2])$/;
+                if (name == "") {
+                    $("#txt_phieuNhapSo").text("Không để rỗng");
+                    focus_input("inp_phieuNhapSo");
+                    AA
+                    return false;
+                } else if (!nameRegex.test(name)) {
+                    $("#txt_phieuNhapSo").text("không đúng định dạng");
+                    focus_input("inp_phieuNhapSo");
+
+                    return false;
+                } else {
+                    $("#txt_phieuNhapSo").text("*");
+                    return true;
+                }
+            }
+
+
+            function checkMaNhapKho() {
+                var sdt = $("#inp_maNhapKho").val();
+                var sdtRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8}$/;;
+
+                if (sdt == "") {
+                    $("#txt_maNhapKho").text("Không được để rỗng");
+                    focus_input("inp_maNhapKho");
+                    return false;
+                } else if (!sdtRegex.test(sdt)) {
+                    $("#txt_maNhapKho").text("không đúng định dạng");
+                    focus_input("inp_maNhapKho");
+                    return false;
+                } else {
+                    $("#txt_maNhapKho").text("*");
+                    return true;
+                }
+            }
+
+            function checkTenMaHang() {
+                var diaChi = $("#inp_tenMatHang").val();
+                if (diaChi == "") {
+                    $("#txt_tenMatHang").text("Không được để rỗng");
+                    focus_input("inp_tenMatHang");
+                    return false;
+                } else {
+                    $("#txt_tenMatHang").text("*");
+                    return true;
+                }
+            }
+            $("#inp_phieuNhapSo").blur(function () {
+                checkPhieuNhapSo();
+            })
+
+            $("#inp_maNhapKho").blur(function () {
+                checkMaNhapKho();
+            })
+
+            $("#inp_tenMatHang").blur(function () {
+                checkTenMaHang();
+            })
+
+            var i = 1;
+            $("#submit_btn").click(function () {
+                if (checkPhieuNhapSo() && checkMaNhapKho() && checkTenMaHang()) {
+
+                    var phieuNhapSo = $("#inp_phieuNhapSo").val();
+                    var maNhapKho = $("#inp_maNhapKho").val();
+                    var tenMatHang = $("#inp_tenMatHang").val();
+
+                    var tdnew = "<tr><td>" + i +
+                        "</td><td>" + maNhapKho +
+                        "</td><td>" + phieuNhapSo +
+                        "</td><td>" + tenMatHang +
+                        "</td></tr>";
+                    $("#myTable").append(tdnew);
+                    i++;
+                    $("#warehouseModal").modal("hide");
+                } else {
+                    alert("Vui lòng kiểm tra đầy đủ thông tin");
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <script>
+        function showDaysInMonth() {
+            // Khai báo và gán giá trị cho biến thang (tháng)
+            let thang = document.getElementById("monthInput").value;
+
+            // Sử dụng switch để xác định số ngày trong tháng
+            let soNgay;
+            switch (parseInt(thang)) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    soNgay = 31;
+                    confirm("Tháng " + thang + " có " + soNgay + " ngày.");
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    soNgay = 30;
+                    confirm("Tháng " + thang + " có " + soNgay + " ngày.");
+                    break;
+                case 2:
+                    soNgay = 28;
+                    confirm("Tháng 2 có " + soNgay + " ngày.");
+                    break;
+                default:
+                    confirm("Tháng không hợp lệ!");
+                    soNgay = "";
+                    break;
+            }
+
+            // Xuất kết quả ra màn hình
+            document.getElementById("result").innerHTML = soNgay ? "Tháng " + thang + " có " + soNgay + " ngày." : "";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Tính số ngày trong tháng</h1>
+    <label for="monthInput">Nhập tháng (1-12): </label>
+    <input type="number" id="monthInput" min="1" max="12" placeholder="Nhập số" style="width: 100px;">
+    <button onclick="showDaysInMonth()">Tính</button>
+
+    <p id="result"></p>
+</body>
+
+</html>

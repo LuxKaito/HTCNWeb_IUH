@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .custom-modal {
+            max-width: 570px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container border border-black">
+        <div class="row"><img style="height: 400px;" src="../image/mau-banner-dich-vu-dien-hoa-dep-mat-thu-hut-1.jpg"
+                alt=""></div>
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container">
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-primary opacity-75 fw-bold" href="#">TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary opacity-75 fw-bold" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalDatHoa">ĐẶT MUA HOA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary opacity-75 fw-bold" href="#">CÂY XANH VĂN PHÒNG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary opacity-75 fw-bold" href="#">TIN TỨC</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Modal Body -->
+        <div class="modal fade" id="modalDatHoa" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+            role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm custom-modal"
+                role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title ms-4" id="modalTitleId">
+                            THÔNG TIN ĐẶT HÀNG NHANH
+                        </h2>
+                        <button type="button" class="btn-close mb-4" style="font-size: 12px;" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formDangKy" style="font-size: 13px;">
+                            <div class="row">
+                                <label for="name" class="col-3 col-form-label text-end fw-bold">Họ Và Tên</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="name" name="name" onblur="checkName()"
+                                        value="Nguyễn Huy Khang">
+                                    <span class="text-danger" id="errName">*</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="phone" class="col-3 col-form-label text-end fw-bold">Số Điện Thoại</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="phone" name="phone"
+                                        onblur="checkPhone()">
+                                    <span class="text-danger" id="errPhone">*</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="day" class="col-3 col-form-label text-end fw-bold">Ngày Đặt</label>
+                                <div class="col-9">
+                                    <input type="date" class="form-control" id="day" name="day" onblur="checkDay()">
+                                    <span class="text-danger" id="errDay">*</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="email" class="col-3 col-form-label text-end fw-bold">Email Của Bạn</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="email" name="email"
+                                        onblur="checkEmail()">
+                                    <span class="text-danger" id="errEmail">*</span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="loaihoa" class="col-3 col-form-label text-end fw-bold">Chọn loại hoa</label>
+                                <div class="col-9">
+                                    <select name="loaihoa" id="loaihoa" class="form-control">
+                                        <option value="Hoa Hồng Nhung">Hoa Hồng Nhung</option>
+                                        <option value="Hoa Hồng Vàng">Hoa Hồng Vàng</option>
+                                        <option value="Hoa Hồng Trắng">Hoa Hồng Trắng</option>
+                                        <option value="Hoa Lan">Hoa Lan</option>
+                                        <option value="Hoa Nhiều Loại">Hoa Nhiều Loại</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="loaithanhtoan" class="col-3 col-form-label text-end fw-bold">Loại Thanh
+                                    Toán</label>
+                                <div class="col-8 form-check mt-2 ms-2 d-flex">
+                                    <input type="radio" name="loaithanhtoan" id="tienmat" class="form-check-input me-2" value="Tiền mặt">
+                                    <label for="loaithanhtoan" class="form-check-label me-5">Tiền mặt</label>
+                                    <input type="radio" name="loaithanhtoan" id="chuyenkhoan" value="Chuyển khoản"
+                                        class="form-check-input me-2">
+                                    <label for="loaithanhtoan" class="form-check-label">Chuyển khoản</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success btn-block w-100" onclick="ThucHienDangKy()">Đặt Hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <img src="../image/hinh2.webp" class="img-fluid" alt="">
+            </div>
+            <div class="col-10">
+                <div class="table-responsive">
+                    <h2 class="fw-bold text-center">DANH SÁCH THÔNG TIN ĐẶT HÀNG NHANH</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>HỌ VÀ TÊN</th>
+                                <th>SỐ ĐIỆN THOẠI</th>
+                                <th>NGÀY ĐẶT</th>
+                                <th>EMAIL CỦA BẠN</th>
+                                <th>LOẠI HOA</th>
+                                <th>LOẠI THANH TOÁN</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dsdk" class="table-light">
+                            <tr>
+                                <td>1</td>
+                                <td>Nguyen Luong</td>
+                                <td>0903.128.350</td>
+                                <td>2023-11-08</td>
+                                <td>nguyenluong1603@iuh.edu.vn</td>
+                                <td>Hoa Hồng Vàng</td>
+                                <td>CHUYEN KHOAN</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer>
+                <div class="row">
+                    <p class="text-center">MSSV: 22710921 - Lớp: DHHTTT18BTT - Họ và Tên: Nguyễn Huy Khang</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function checkName() {
+        var regt = /^[A-ZÀ-Ỹ]+[A-ZÀ-Ỹa-zà-ỹ]+(\s*[A-ZÀ-Ỹ]+[A-ZÀ-Ỹa-zà-ỹ]+)+$/;
+        var name = $("#name").val().trim();
+
+        if (name === '') {
+            $("#errName").text("* Họ tên không được để trống");
+            $("#name").focus();
+            return false;
+        } else if (!regt.test(name)) {
+            $("#errName").text("* Có ít nhất 2 từ và ký tự đầu tiên của mỗi từ phải được viết hoa.");
+            $("#name").focus();
+            return false;
+        } else {
+            $("#errName").text("*");
+        }
+        return true;
+    }
+    function checkPhone() {
+        var regt = /^0\d{3}\.\d{3}\.\d{3}$/;
+        var name = $("#phone").val().trim();
+
+        if (name === '') {
+            $("#errPhone").text("* Số điện thoại không được để trống");
+            $("#phone").focus();
+            return false;
+        } else if (!regt.test(name)) {
+            $("#errPhone").text("* theo mẫu: 0XXX.XXX.XXX");
+            $("#phone").focus();
+            return false;
+        } else {
+            $("#errPhone").text("*");
+        }
+        return true;
+    }
+
+    function checkDay() {
+        var day = $("#day").val();
+        var currentDay = new Date();
+        var inputDay = new Date(day);
+
+        if (day === '') {
+            $("#errDay").text("* Ngày đặt không được để trống ");
+            $("#day").focus();
+            return false;
+        } else if (currentDay > inputDay) {
+            $("#errDay").text("* Ngày Đặt sau ngày hiện tại");
+            $("#day").focus();
+            return false;
+        } else {
+            $("#errDay").text("*");
+        }
+        return true;
+    }
+
+    function checkEmail() {
+        //var regt = /^[A-Za-z0-9]{2,}[!@#$%^&*._]+[A-Za-z0-9]*\@iuh\.edu\.vn$/;
+        var regt = /^[A-Za-z0-9!@#$%^&*._]{3,}\@iuh\.edu\.vn$/;
+        var name = $("#email").val().trim();
+
+        if (name === '') {
+            $("#errEmail").text("* Email không được để trống");
+            $("#email").focus();
+            return false;
+        } else if (!regt.test(name)) {
+            $("#errEmail").text("*  theo mẫu: name_email@iuh.edu.vn name_email ít nhất là 3 ký tự trong đó có kí tự chữ, ký tự số, ít nhất 1 ký tự đặc biệt");
+            $("#email").focus();
+            return false;
+        } else {
+            $("#errEmail").text("*");
+        }
+        return true;
+    }
+    function checkLoaiThanhToan() {
+        if (!$('input[name="loaithanhtoan"]:checked').val()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function ThucHienDangKy() {
+        if (checkName() && checkPhone() && checkDay() && checkEmail() && checkLoaiThanhToan()) {
+
+            var name = $('#name').val();
+            var dob = $('#day').val();
+            var email = $('#email').val();
+            var phone = $('#phone').val();
+            var loaiHoa = $('#loaihoa').val();
+            var studyType = $('input[name="loaithanhtoan"]:checked').val();
+            var newRow = `
+            <tr>
+                <td>${$('#dsdk tr').length + 1}</td>;
+                <td>${name}</td>
+                <td>${phone}</td>;
+                <td>${dob}</td>;
+                <td>${email}</td>;
+                <td>${loaiHoa}</td>;
+                <td>${studyType}</td>;
+            </tr>
+        `;
+
+
+            $('#dsdk').append(newRow);
+            $('#modalDatHoa').modal('hide');
+            $('#formDangKy')[0].reset();
+            console.log('hợp lệ');
+
+        } else {
+            console.log('lỗi');
+        }
+
+
+    }
+</script>

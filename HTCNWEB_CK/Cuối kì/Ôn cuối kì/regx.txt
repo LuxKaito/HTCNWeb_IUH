@@ -1,0 +1,56 @@
+Mã sách có định dạng XXX-XX-XXX, trong có XXX là 3 chữ số, XX là 2 ký tự số thể
+hiện năm từ năm hiện tại về sau, XXX 2 ký tự in hoa (1 đ).
+[A-Z]{3}-\d{2}-[0-9]{3}
+
+
+Họ tên khách hàng: Họ tên chỉ là các ký tự in hoa, có thể có khoảng trắng, họ tên có ít
+nhất là 2 từ Họ, Tên 
+var re = /^[A-ZÀ-Ỹ][a-zà-ỹ]{1,}(\s+[A-ZÀ-Ỹ][a-zà-ỹ]{1,})*$/;
+
+
+Email phải có ký tự @ và kết thúc với .com
+var regx = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.com$/;
+
+
+Mã tour theo mẫu: XXX-XXX-00-0000
+var re = /^[A-Z]{3}\-[A-Z]{3}\-\d{2}\-\d{4}$/;
+
+
+Họ tên không được rỗng, ký tự đầu của mỗi từ là chữ hoa (vd: Lê Văn An)
+var regt = /^[A-ZÀ-Ỹ][a-zà-ỹ]*(\s+[A-ZÀ-Ỹ][a-zà-ỹ]*)*$/;
+
+
+Ví dụ: Biểu thức chính quy cho số CMND
+pattern = "/^[0-9] {10}$/"
+
+
+Ví dụ: Xây dựng biểu thức chính quy cho password từ 6-20 ký tự, con số hoặc các ký tự đặc biệt.
+pattern = "/^[A-Za-z0-9(!@#$%^&*()_ ]{6,20} $/"
+
+
+Ví dụ: Xây dựng biểu thức chính quy cho địa chỉ mail.
+pattern = "/^[a-zA-Z0-9]+\@[a-zA-Z]{4,7}+\.[a-zA-Z]{3}/";
+
+
+Ví dụ: Xây dựng biểu thức chính quy cho số điện thoại di động 10 hoặc 11 số.
+pattern = "/^(01\d{9})|(09\d{8})$/';
+
+
+Ví dụ: Xây dựng biểu thức chính quy cho mã thẻ cào.
+pattern ="/^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/";
+
+
+Kiểm tra họ tên chứa ký tự đầu viết hoa hoặc viết hoa hoàn toàn:
+^[A-Z][a-z]*(\s[A-Z][a-z]*)*$
+
+
+Mật khẩu chứa các ký tự, con số, và các ký tự đặc biệt, có chiều dài từ 8-20:
+^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$
+
+
+Kiểm tra số ĐT hợp lệ (Ở Việt Nam):
+^(0|\+84)\d{9,10}$
+
+
+Kiểm tra email hợp lệ:
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$

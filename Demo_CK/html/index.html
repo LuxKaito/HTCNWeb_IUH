@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .custom-modal {
+            max-width: 750px;
+        }
+
+        .nav-link:hover {
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container border border-black p-0">
+        <div class="row">
+            <img src="../image/khoahoctaonline.png" alt="">
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-primary" href="#">Free English Course</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-primary fw-bold text-opacity-75" href="#"
+                                aria-current="page">Trang chủ
+                                <span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary fw-bold text-opacity-75" href="#">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary fw-bold text-opacity-75" href="#">Khóa học</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-danger text-white" data-bs-toggle="modal"
+                                data-bs-target="#modalDangKy">Đăng ký</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Modal Body -->
+        <div class="modal fade" id="modalDangKy" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+            role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm custom-modal"
+                role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">
+                            Thông tin đăng ký
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="formDangKy" style="font-size: 13px;">
+                            <div class="row">
+                                <label for="name" class="col-3 col-form-label text-end fw-bold">Họ tên</label>
+                                <div class="col-9">
+                                    <input type="text" name="name" id="name" class="form-control" onblur="checkName()">
+                                    <span class="text-danger" id="errName"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="day" class="col-3 col-form-label text-end fw-bold">Ngày sinh</label>
+                                <div class="col-9">
+                                    <input type="date" name="day" id="day" class="form-control" onblur="checkDay()">
+                                    <span class="text-danger" id="errDay"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="phone" class="col-3 col-form-label text-end fw-bold">Số điện thoại</label>
+                                <div class="col-9">
+                                    <input type="text" name="phone" id="phone" class="form-control"
+                                        onblur="checkPhone()">
+                                    <span class="text-danger" id="errPhone"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="email" class="col-3 col-form-label text-end fw-bold">Email</label>
+                                <div class="col-9">
+                                    <input type="text" name="email" id="email" class="form-control"
+                                        onblur="checkEmail()">
+                                    <span class="text-danger" id="errEmail"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="course" class="col-3 col-form-label text-end fw-bold">Email</label>
+                                <div class="col-9">
+                                    <select name="course" id="course" class="form-control" onchange="checkCourse()">
+                                        <option value="Anh văn cơ bản">Anh văn cơ bản</option>
+                                        <option value="Anh văn giao tiếp">Anh văn giao tiếp</option>
+                                        <option value="Luyện thi IELTS">Luyện thi IELTS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="time" class="col-3 col-form-label text-end fw-bold">Thời gian học</label>
+                                <div class="col-9">
+                                    <input type="text" name="time" id="time" class="form-control bg-light"
+                                        onblur="checkTime()" readonly>
+                                    <span class="text-danger" id="errTime"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="loaihoc" class="col-3 col-form-label text-end fw-bold">Chọn hình thức
+                                    học</label>
+                                <div class="col-8 form-check mt-2 ms-2">
+                                    <input type="radio" class="form-check-input" name="loaihoc" id="hoctaitrungtam"
+                                        value="Học tại trung tâm">
+                                    <label for="hoctaitrungtam" class="form-check-label">Học tại trung tâm</label>
+                                    <br>
+                                    <input type="radio" class="form-check-input" name="loaihoc" id="hoconline"
+                                        value="Học online">
+                                    <label for="hoconline" class="form-check-label">Học online</label>
+                                    <span class="text-danger" id="errHinhThuc"></span>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="loaihoc" class="col-3 col-form-label text-end fw-bold">Các kỹ năng luyện
+                                    tập</label>
+                                <div class="col-8 form-check mt-2 ms-2">
+                                    <input type="checkbox" class="form-check-input" name="kynangluyentap"
+                                        id="kynangnghe" value="Kỹ năng nghe">
+                                    <label for="kynangnghe class=" form-check-label">Kỹ năng nghe</label>
+                                    <br>
+                                    <input type="checkbox" class="form-check-input" name="kynangluyentap" id="kynangdoc"
+                                        value="Kỹ năng đọc">
+                                    <label for="kynangdoc" class="form-check-label">Kỹ năng đọc</label>
+                                    <br>
+                                    <input type="checkbox" class="form-check-input" name="kynangluyentap"
+                                        id="kynangviet" value="Kỹ năng viết">
+                                    <label for="kynangviet" class="form-check-label">Kỹ năng viết</label>
+                                    <span class="text-danger" id="errKyNang"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" onclick="ThucHienDangKy()">Đăng ký</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                            Hủy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="table-responsive mt-4">
+                <h2>DANH SÁCH ĐĂNG KÝ KHÓA HỌC</h2>
+                <table class="table table-bordered border mt-3 border-black">
+                    <thead>
+                        <tr>
+                            <th>Số tt</th>
+                            <th>Họ tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Điện thoại</th>
+                            <th>Email</th>
+                            <th>Khóa học</th>
+                            <th>Hình thức học</th>
+                            <th>Kỹ năng cần luyện</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dsdk">
+                        <tr>
+                            <td>(1)</td>
+                            <td>(2)</td>
+                            <td>(3)</td>
+                            <td>(4)</td>
+                            <td>(5)</td>
+                            <td>(6)</td>
+                            <td>(7)</td>
+                            <td>(8)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <div class="bg-primary">
+                <div class="row text-center text-white fw-bold">
+                    <p>Thông tin sinh viên:</p>
+                    <em>Họ tên: Nguyễn Huy Khang</em>
+                    <em style="margin-left: -10px;">Mã sinh viên: 22710921</em>
+                    <em style="margin-left: -19px;">Lớp học: DHHT18BTT</em>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function checkName() {
+        var regt = /^[A-ZÀ-Ỹ]+[A-ZÀ-Ỹa-zà-ỹ]+(\s*[A-ZÀ-Ỹ]+[A-ZÀ-Ỹa-zà-ỹ]+)+$/;
+        var name = $("#name").val().trim();
+
+        if (name === "") {
+            $("#errName").text("Họ tên không được để trống");
+            $("#name").focus();
+            return false;
+        } else if (!regt.test(name)) {
+            $("#errName").text("Ký tự đầu của mỗi từ là chữ hoa");
+            $("#name").focus();
+            return false;
+        } else {
+            $("#errName").text("");
+        }
+        return true;
+    }
+    function checkPhone() {
+        var regt = /^(08|09|03)+\d{8}$/;
+        var phone = $("#phone").val();
+
+        if (phone === "") {
+            $("#errPhone").text("Số điện thoại không được để trống");
+            $("#phone").focus();
+            return false;
+        } else if (!regt.test(phone)) {
+            $("#errPhone").text("có định dạng 10 số, được bắt đầu với 09,03,08");
+            $("#phone").focus();
+            return false;
+        } else {
+            $("#errPhone").text("");
+        }
+        return true;
+    }
+
+    function checkDay() {
+        var day = $("#day").val();
+        var currentDay = new Date();
+        var inputDay = new Date(day);
+
+        if (day === "") {
+            $("#errDay").text("Ngày sinh không được để trống");
+            $("#day").focus();
+            return false;
+        } else if (currentDay < inputDay) {
+            $("#errDay").text("Ngày sinh: phải trước ngày hiện tại. ");
+            $("#day").focus();
+            return false;
+        } else {
+            $("#errDay").text("");
+        }
+        return true;
+    }
+
+    function checkEmail() {
+        var regt = /^[A-za-z0-9!@#$%^&*._+-]+\@[A-za-z]{4,7}\.com$/;
+        var email = $("#email").val().trim();
+
+        if (email === "") {
+            $("#errEmail").text("Email không được để trống");
+            $("#email").focus();
+            return false;
+        } else if (!regt.test(email)) {
+            $("#errEmail").text("Email phải có ký tự @ và kết thúc với .com");
+            $("#email").focus();
+            return false;
+        } else {
+            $("#errEmail").text("");
+        }
+        return true;
+    }
+
+    function checkCourse() {
+        var course = $("#course").val();
+        var studyTime = "";
+
+        switch (course) {
+            case "Anh văn cơ bản":
+                studyTime = "3 tháng";
+                break;
+            case "Anh văn giao tiếp":
+                studyTime = "6 tháng";
+                break;
+            case "Luyện thi IELTS":
+                studyTime = "9 tháng";
+                break;
+        }
+        $("#time").val(studyTime);
+    }
+
+    function checkStudyType() {
+        if (!$("input[name='loaihoc']:checked").val()) {
+            $("#errHinhThuc").text("Hình thức học bắt buộc chọn");
+            return false;
+        } else {
+            $("#errHinhThuc").text("");
+            return true;
+        }
+    }
+
+    function checkSkill() {
+        if (!$("input[name='kynangluyentap']:checked").length) {
+            $("#errKyNang").text("Hình thức học bắt buộc chọn");
+            return false;
+        } else {
+            $("#errKyNang").text("");
+            return true;
+        }
+    }
+
+    function ThucHienDangKy() {
+        checkCourse();
+        if (checkName() && checkDay() && checkPhone() && checkEmail() && checkSkill() && checkStudyType) {
+
+            var name = $("#name").val();
+            var phone = $("#phone").val();
+            var day = $("#day").val();
+            var email = $("#email").val();
+            var course = $("#course").val();
+            var time = $("#time").val();
+            var studyType = $("input[name='loaihoc']:checked").val();
+            var skills = [];
+            $("input[type='checkbox']:checked").each(function () { skills.push($(this).val()) });
+
+            var newwRow = `
+                        <tr>
+                            <td>${$('#dsdk tr').length + 1}</td>
+                            <td>${name}</td>
+                            <td>${day}</td>
+                            <td>${phone}</td>
+                            <td>${email}</td>
+                            <td>${course}</td>
+                            <td>${studyType}</td>
+                            <td>${skills}</td>
+                        </tr>
+        `
+            $('#dsdk').append(newwRow);
+            $('#modalDangKy').modal("hide");
+            $('#formDangKy')[0].reset();
+            console.log("Hợp lệ");
+        } else {
+            console.log("Không hợp lệ");
+        }
+    }
+</script>

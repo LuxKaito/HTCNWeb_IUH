@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x1 = eval(prompt("Nhập số thứ nhất x1 = ",10));
+        var x2 = eval(prompt("Nhập số thứ hai x2 = ",20));
+        var s = x1+x2;
+        alert("s=",s); //thông báo
+        confirm("s=",s); //thông báo có thêm nút cancel
+        document.write("tổng là s = " + s);
+
+        var year = eval(prompt("Nhập năm = ")); //Năm nhuận chia hết cho 400 hoặc 4 nhưng không chia hết cho 100
+        
+        if((year % 400 == 0)||((year%100!=0) && (year%4==0)))
+        {
+            alert(year + " là năm nhuận.");
+        }
+        else
+        {
+            alert(year + " không là năm nhuận.");
+        }
+
+        var dtb = eval(prompt("Nhập điểm trung bình = "));
+        if(dtb >= 8)
+        {
+            alert(dtb + " đạt loại giỏi" );
+        }
+        else if(dtb >= 6.5 && dtb < 8)
+        {
+            alert(dtb + " đạt loại khá" );
+        }
+        else if(dtb >= 5  && dtb < 6.5)
+        {
+            alert(dtb + " đạt loại trung bình" );
+        }
+        else
+        {
+            alert(dtb + " đạt loại yếu" );
+        }
+        for (i=1; i<=10; i++)
+        {
+            document.write("<br>" + 5 + "*" + i+ "=" + (5*i) + "<br >");
+        }
+    </script>
+</body>
+</html>

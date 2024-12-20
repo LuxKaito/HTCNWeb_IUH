@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuần 1 bài 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .container {
+            margin-top: 30px;
+            width: 800px;
+            height: 803px;
+            border: 2px solid black;
+        }
+
+        .header {
+            width: 100%;
+            height: 130px;
+            text-align: center;
+            line-height: 130px;
+        }
+        .header h2 {
+            color: #a73333;
+            font-size: 40px;
+            text-transform: uppercase;
+            font-style: italic;
+            text-shadow: 20px 20px 15px #a73333  ;
+        }
+
+        .nav {
+            width: 100%;
+            height: 40px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            background-color: pink;
+        }
+        .nav ul li {
+            display: inline-block;
+            line-height: 40px;
+            width: 100px;
+            text-align: center;
+            border-right: 2px solid black;
+        }
+        .nav ul li a {
+            text-decoration: none;
+           
+        }
+        .nav #sea ,#GO {
+            position: relative;
+            top: -33px;
+            right: -500px;
+        }
+        .nav #home{
+            width: 20px;
+            margin-left: 55px
+        }
+        .section {
+            width: 50%;
+            height: 580px;
+            padding-left: 5px;
+            float: left;
+        }
+        .nav_d {
+            width: 20%;
+            height: 580px;
+            float: left;
+        }
+        .nav_d ul li {
+            list-style-type: none; /* Xóa dấu chấm */
+            background-color: orange;
+            margin-top: 10px;
+            margin-left: -20px;
+            width: 120px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .nav_d ul li a{
+            text-decoration: none;
+            color: white
+        }
+        .nav_d ul li a:hover{
+            color: black;
+            text-transform: uppercase;
+        }
+        .nav_d #h1{
+            width: 140px;
+            margin: 6px;
+            border-radius: 50%;
+            box-shadow: 10px 10px 10px pink;
+        }
+        .aside {
+            width: 30%;
+            height: 580px;
+            padding-left: 5px;
+
+            float: left;
+        }
+        .aside #k1{
+            width: 96%;
+            height: 90%;
+            background-color: black;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .aside #k1 #k11, #k12{
+            width: 160px;
+            height: 100px;
+            margin-top: 5px;
+        }
+        .footer{
+            width: 100%;
+            height: 50px;
+            background-color: beige;
+            clear: both;
+        }
+        .section h2 {
+            color: #a73333;
+            background-color: beige;
+            font-size: 35px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .section .c1{
+            color:#a73333;
+            font-weight: bold;
+        }
+        .section .indam{
+            color: orange;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .section .v{
+            color:#a73333;
+            font-weight: bold;
+        }
+        .id1,
+        .id2,
+        .id3 {
+    width: 400px;
+    background-color: pink;
+    text-align: center;
+    color: red;
+    letter-spacing: 15px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Example Cafe Menu</h2>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#"><img src="../IMAGE/icons8-home-50.png" alt="home" id="home"></a></li>
+                <li><a href="#Starters">Starters </a></li>
+                <li><a href="#Main Courses">Main Courses</a></li>
+                <li><a href="#Desserts">Desserts</a></li>
+            </ul>
+            <input type="search" name="sea" id="sea" placeholder="Search">
+            <button type="submit" id="GO">GO</button>
+        </div>
+        <div class="nav_d">
+            <ul>
+                <li><a href="#">Home1</a></li>
+                <li><a href="#">Home2</a></li>
+                <li><a href="#">Home3</a></li>
+                <li><a href="#">Home4</a></li>
+                <li><a href="#">Home5</a></li>
+            </ul>
+            <img src="../IMAGE/company.png" alt="company" id="h1">
+        </div>
+        <div class="section">
+            <h2 id="Starters" class="id1">Starters</h2>
+            <ul>
+                <li >
+                    Chestnut and Mushroom Goujons (<a href="#v" class="v">v</a>)
+                </li>
+                <li >Goat Cheese Salad (<a href="#v" class="v">v</a>)</li>
+                <li>
+                    <div class="indam">
+                        Honey Soy Chicken Kebabs <a href="#v" class="v">(v)</a>
+                    </div>
+                </li>
+                <li >Seafood Salad</li>
+            </ul>
+            <a href="#" class="c1" >Back to top</a>
+            <h2 id="Desserts" >Desserts</h2>
+            <ul>
+                <li >Lemon Sorbet (<a href="#v" class="v">v</a>)</li>
+                <li >Chocolate Mud Pie (<a href="#v" class="v">v</a>)</li>
+                <li >Pecan Pie (<a href="#v" class="v">v</a>)</li>
+                <li >
+                    Selection of Fine Cheeses from Around the World
+                </li>
+            </ul>
+            <a href="#" class="c1" >Back to top</a>
+        </div>
+        <div class="aside">
+            <div id="k1">
+                <img src="../IMAGE/meeting.png" alt="meeting" id="k11">
+                <img src="../IMAGE/launch.png" alt="launch" id="k12">
+
+            </div>
+        </div>
+        <div class="footer">
+            <address>haha</address>
+        </div>
+    </div>
+</body>
+
+</html>

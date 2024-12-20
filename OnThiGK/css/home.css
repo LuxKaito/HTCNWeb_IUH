@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.container{
+    font-family: 'Times New Roman', Times, serif;
+    width: 960px;
+    border: 1px solid black;
+}
+
+header{
+    height: 100px;
+    width: 960px;
+    border-bottom: 1px solid black;
+    background-image: url(../images/nen_header.jpg);
+    display: flex;
+    position: relative;
+}
+header img {
+    height: 90px;
+    left: 15px;
+    position: absolute;
+}
+.font{
+    font-size: 15px;
+    top: 20px;
+    left: 110px;
+    position: absolute;
+}
+
+header .search {
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.search-input {
+    margin-top: 10px;
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+    background-image: url(../images/Screenshot\ 2024-10-15\ 194436.png); /* Đường dẫn tới hình ảnh */
+    background-size: 20px 20px; /* Kích thước của hình ảnh */
+    background-position: right 5px;
+    background-repeat: no-repeat;
+}
+nav{
+    background-color: #eac54d ;
+    height: 50px;
+    width: 960px;
+    border-bottom: 1px solid black;
+    display: flex;
+    position: relative;
+}
+nav .menu {
+    position: absolute;
+}
+nav img{
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 30px;
+    position: absolute;
+}
+.menu li{
+    display: inline-block;
+    margin: 15px;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+.menu li a:hover{
+    color: blue;
+}
+.giua{
+    height: 470px;
+    width: 960px;
+    border-bottom: 1px solid black;
+}
+
+.layout1 {
+    display: flex;
+    padding-top: 20px;
+}
+
+.form-section {
+    font-size: 12px;
+    width: 65%;
+    border: 1px solid lightgrey;
+    border-bottom: 6px solid #eac54d;;
+    padding: 5px;
+    margin: 0px;
+    border-radius: 3px;
+    background: linear-gradient(#fffddf, #ffeecb);
+}
+
+input[type="text"],
+select {
+    width: 80%; /* Chiều rộng 100% để chúng đều dài bằng nhau */
+    max-width: 480px; /* Tùy chọn chiều rộng tối đa (có thể điều chỉnh) */
+    padding: 5px; /* Thêm khoảng cách bên trong cho ô */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào chiều rộng */
+}
+
+.layout1 button{
+    margin-left: 110px;
+    color: white;
+    background-color: red;
+}
+
+
+select {
+    font-size: 10px; /* Kích thước chữ cho toàn bộ menu dropdown */
+    color: gray; /* Màu sắc chữ cho toàn bộ menu dropdown */
+}
+
+
+.aside-content {
+    width: 33%;
+    margin-left: 2%;
+    font-size: 12px;
+    border: 1px solid lightgrey;
+    border-top: 6px solid #eac54d;;
+    padding: 5px;
+    border-bottom: none;
+}
+
+.layout2 {
+    display: flex;
+    padding-top: 10px;
+}
+
+.content-section {
+    width: 65%;
+}
+
+.aside-img {
+    width: 33%;
+    margin-left: 2%;
+    gap: 10px; /* Khoảng cách giữa các hình ảnh */
+
+}
+
+
+footer {
+    height: 90px;
+    background-color: #be1e2d;
+    padding-left: 10px;
+    font-size: 8px;
+    color: #ffffff;
+    display: flex;
+}
+footer img{
+    height: 80px;
+}
+footer p {
+    margin: 0; /* Xóa margin mặc định của p */
+    padding-left: 40px; /* Căn lề trái cho văn bản */
+    font-size: 12px; /* Kích thước chữ (tuỳ chọn) */
+    padding-bottom: 10px;
+    padding-top: 10px;
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lam làm bài</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .custom-modal {
+            max-width: 780px; /* Điều chỉnh kích thước phù hợp */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="border: 1px solid #aaa;">
+
+        <!-- header -->
+        <div class="row">
+            <div class="col p-0">
+                <img src="../image/khoahoctaonline.png" alt="khoahoctaonline">
+            </div>
+        </div>
+
+        <!-- nav menu -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="#">Free English Course</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Khóa học</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDangKy">
+                            Đăng ký
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalDangKy" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog custom-modal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">THÔNG TIN SINH VIÊN</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formDangKy" class=" horizontal-form">
+                            <div class="form-group row">
+                                <label for="name" class="col-3 align-content-center text-right">Họ tên</label>
+                                <input type="text" name="name"  id="name" class="form-control col-8"
+                                    onchange="checkName()">
+                                <span class="form-message text-right text-danger" id="nameError"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="dob" class="col-3  align-content-center text-right">Ngày sinh</label>
+                                <input type="date" name="dob" id="dob" class="form-control col-8 "
+                                    onchange="checkDate()">
+                                <span class="form-message text-right text-danger" id="dobError"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="phone" class="col-3 align-content-center text-right">Số điện thoại</label>
+                                <input type="tel" name="phone" id="phone" class="form-control col-8" maxlength="10"
+                                    onchange="checkPhone()">
+                                <span class="form-message text-right text-danger" id="phoneError"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="mail" class="col-3 align-content-center text-right">Email</label>
+                                <input type="email" name="mail" id="mail" class="form-control col-8"
+                                    onchange="checkMail()">
+                                <span class="form-message text-right text-danger" id="mailError"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="course" class="col-3 align-content-center text-right">Chọn khóa học</label>
+                                <select name="course" id="course" class="form-control col-8 " onchange="checkCourse()">
+                                    <option value="Anh văn cơ bản">Anh văn cơ bản</option>
+                                    <option value="Anh văn giao tiếp">Anh văn giao tiếp</option>
+                                    <option value="Luyện thi IELTS">Luyện thi IELTS</option>
+                                </select>
+                                <span class="form-message text-right text-danger" id="courseError"></span>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="studyTime" class="col-3 align-content-center text-right">Thời gian
+                                    học</label>
+                                <input type="text" name="studyTime" id="studyTime" class="form-control col-8"
+                                    value="3 tháng" readonly>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="studyType" class="col-3 align-content-center text-right">Chọn hình thức
+                                    học</label>
+                                <div class="form-check col-9">
+                                    <input type="radio" name="studyType" id="studyCenter" value="Học tại trung tâm">
+                                    <label for="studyCenter">Học tại trung tâm</label>
+                                    <br>
+                                    <input type="radio" name="studyType" id="studyOnline" value="Học online">
+                                    <label for="studyOnline">Học online</label>
+                                </div>
+                                <span class="form-message text-center text-danger" id="studyTypeError"></span>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label for="skill" class="col-3 align-content-center text-right">Các kỹ năng luyện
+                                    tập</label>
+                                <div class="col-9">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="skill" id="skillListening" class="form-check-input"
+                                            value="Kỹ năng nghe">
+                                        <label for="skillListening" class="form-check-label">Kỹ năng nghe</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" name="skill" id="skillReading" class="form-check-input"
+                                            value="Kỹ năng đọc">
+                                        <label for="skillReading" class="form-check-label">Kỹ năng đọc/label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" name="skill" id="skillWriting" class="form-check-input"
+                                            value="Kỹ năng viết">
+                                        <label for="skillWriting" class="form-check-label">Kỹ năng viết</label>
+                                    </div>
+                                    <span class="form-message text-center text-danger" id="skillError"></span>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" onclick="ThucHienDangKy()">Đăng ký</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- body -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Điện thoại</th>
+                    <th>Email</th>
+                    <th>Khóa học</th>
+                    <th>Hình thức học</th>
+                    <th>Kỹ năng cần luyện</th>
+                </tr>
+            </thead>
+            <tbody id="dsdk">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="row mt-2 bg-primary text-white">
+            <div class="col text-center">
+                <p>Thông tin sinh viên:</p>
+                <p>Nguyễn Huy Khang</p>
+                <p>22710921</p>
+                <p>DHHTT18BTT</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function checkName() {
+        var name = $('#name').val();
+        // var regt = /^[A-Z]+[A-Za-z]*(\s*[A-Z]+[A-Za-z]*)*$/;
+        // /^[A-ZÀ-Ů][a-zà-ỹ]*(\s+[A-ZÀ-Ů][a-zà-ỹ]*)*$/; 
+        var regt = /^[A-ZÀ-Ỹ][a-zà-ỹ]*(\s+[A-ZÀ-Ỹ][a-zà-ỹ]*)*$/;
+        if (!regt.test(name)) {
+            $('#nameError').text('Họ tên không được rỗng, ký tự đầu của mỗi từ là chữ hoa');
+            $('#name').focus();
+            return false;
+        } else {
+            $('#nameError').text('');
+        }
+        return true;
+    }
+
+    function checkDate() {
+
+        var dob = $('#dob').val();
+        var currentDate = new Date();
+        var inputDate = new Date(dob);
+
+        if (dob.trim() === '') {
+            $('#dobError').text('Vui lòng nhập ngày sinh');
+            $('#dob').focus();
+            return false;
+        } else {
+            $('#dobError').text('');
+        }
+
+
+        if (inputDate >= currentDate) {
+            $('#dobError').text('Ngày sinh phải trước ngày hiện tại');
+            $('#dob').focus();
+            return false;
+        } else {
+            $('#dobError').text('');
+        }
+        return true;
+    }
+
+    function checkPhone() {
+        var phone = $('#phone').val();
+        var regx = /^(09|03|08)+[0-9]{8}$/;
+        if (!regx.test(phone)) {
+            $('#phoneError').text('Số điện thoại không được rỗng, có định dạng 10 số, được bắt đầu với 09,03,08 ');
+            $('#phone').focus();
+            return false;
+        } else {
+            $('#phoneError').text('');
+        }
+        return true;
+    }
+
+    function checkMail() {
+        var email = $('#mail').val();
+        var regx = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.com$/;
+
+        if (!regx.test(email)) {
+            $('#mailError').text('Email phải có ký tự @ và kết thúc với .com');
+            $('#mail').focus();
+            return false;
+        } else {
+            $('#mailError').text('');
+        }
+        return true;
+    }
+
+    function checkCourse() {
+        var course = $('#course').val();
+        var studyTime = '';
+
+        switch (course) {
+            case 'Anh văn cơ bản':
+                studyTime = '3 tháng';
+                break;
+            case 'Anh văn giao tiếp':
+                studyTime = '6 tháng';
+                break;
+            case 'Luyện thi IELTS':
+                studyTime = '12 tháng';
+                break;
+            default:
+                studyTime = '';
+        }
+
+        $('#studyTime').val(studyTime);
+
+    }
+
+    function checkStudyType() {
+        if (!$('input[name="studyType"]:checked').val) {
+            $('#studyTypeError').text('Hình thức học bắt buộc phải chọn');
+            return false;
+        } else {
+            $('#studyTypeError').text('');
+            return true;
+        }
+    }
+
+
+
+    function checkSkill() {
+        if (!$('input[name="skill"]:checked').length) {
+            $('#skillError').text('Ít nhất một kỹ năng luyện tập phải được chọn');
+            return false;
+        } else {
+            $('#skillError').text('');
+            return true;
+        }
+    }
+
+    function ThucHienDangKy() {
+        if (checkName() && checkPhone() && checkDate() && checkMail() && checkStudyType() && checkSkill()) {
+
+            var name = $('#name').val();
+            var dob = $('#dob').val();
+            var phone = $('#phone').val();
+            var email = $('#mail').val();
+            var course = $('#course').val();
+            var studyTime = $('#studyTime').val();
+            var studyType = $('input[name="studyType"]:checked').val();
+            var skills = [];
+            $('input[type="checkbox"]:checked').each(function () { skills.push($(this).val()); });
+
+            var newRow = `
+            <tr>
+                <td>${$('#dsdk tr').length + 1}</td>;
+                <td>${name}</td>;
+                <td>${dob}</td>;
+                <td>${phone}</td>;
+                <td>${email}</td>;
+                <td>${course}</td>;
+                <td>${studyType}</td>;
+                <td>${skills.join(', ')}</td>;
+            </tr>
+        `;
+
+
+            $('#dsdk').append(newRow);
+            $('#modalDangKy').modal('hide');
+            $('#formDangKy')[0].reset();
+            console.log('hợp lệ');
+
+        } else {
+            console.log('lỗi');
+        }
+
+
+    }
+
+
+
+
+</script>

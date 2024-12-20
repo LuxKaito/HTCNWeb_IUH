@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Cửu Chương</title>
+</head>
+<body>
+    <h1>Bảng Cửu Chương</h1>
+    <input type="number" id="numberInput" placeholder="Nhập số">
+    <button onclick="BangCuuChuong()">Tạo Bảng Cửu Chương</button>
+    <div id="result"></div>
+
+    <script>
+        function BangCuuChuong() {
+            const number = document.getElementById('numberInput').value;
+            let result = '';
+            for (let i = 1; i <= 10; i++) {
+                result += `${number} x ${i} = ${number * i}<br>`;
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

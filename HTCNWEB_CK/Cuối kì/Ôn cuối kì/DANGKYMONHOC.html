@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    /*khai báo đúng thứ tự*/
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        /*định dạng đương kẻ chi toàn bộ cho các class=col-*/
+        [class*=col-] {
+            border: 1px solid #808080;
+        }
+
+        .horizontal-form [class*=col-] /*from ngang*/ {
+            border: none;
+        }
+
+        #er1, #er2, #er3 {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        function ktraten()
+        {//Dhjhjj DDDD DDDggggg  Dfdgfdgfd
+            var regt = /^[A-Z]+[A-Za-z]*(\s*[A-Z]+[A-Za-z]*)*$/;
+            var t = document.getElementById("txtten").value;
+            if(regt.test(t))
+            {
+                //dubng
+                document.getElementById("er1").innerHTML = "";
+                return true;
+            }
+            else
+            {
+                document.getElementById("er1").innerHTML = "Ten sai";
+                return false;
+            }
+        }
+        function ktrans()
+        {
+            var ns = document.getElementById("txtns").value;//text
+            ns = new Date(ns);
+            var crr = new Date();
+            var t = crr.getFullYear() - ns.getFullYear();
+            if(t>=16)
+            {
+                document.getElementById("er2").innerHTML = "";
+                return true;
+            }
+            else
+            {
+                //sai
+                document.getElementById("er2").innerHTML = "Tuoi ko hop le";
+                return false;
+            }
+
+        }
+
+        var count = 1;
+        function Dangky()
+        {
+            // cac thanh dung
+            if (ktraten() && ktrans())
+            {
+                // them
+                var t = document.getElementById("txtten").value;
+                var ns = document.getElementById("txtns").value;//text
+                var n = document.getElementById("frmdk").length;
+                //duyet radio gioi tinh
+                var gtinh = "";
+                for (var i = 0; i < n; i++)
+                    if (document.getElementById("frmdk").elements[i].checked == true &&
+                        document.getElementById("frmdk").elements[i].type == "radio")
+                        gt = document.getElementById("frmdk").elements[i].value;
+                //duyet checkbox nngu
+                var nngu = "";
+                for (var i = 0; i < n; i++)
+                    if (document.getElementById("frmdk").elements[i].checked == true &&
+                        document.getElementById("frmdk").elements[i].type == "checkbox")
+                        nngu += document.getElementById("frmdk").elements[i].value + ", ";
+
+
+                //duyet select => mon hoc
+                var mh = document.getElementById("lstmh").value;
+
+                //alert(t + ns + gt + nngu + mh);
+
+                //dua dl vao bang
+                var b = document.getElementById("tblinfo");
+                var h = b.insertRow(count);
+                var c0 = h.insertCell(0);
+                var c1 = h.insertCell(1);
+                var c2 = h.insertCell(2);
+                var c3 = h.insertCell(3);
+                var c4 = h.insertCell(4);
+                c0.innerHTML = t;
+                c1.innerHTML = ns;
+                c2.innerHTML = gt;
+                c3.innerHTML = nngu;
+                c4.innerHTML = mh;
+                count++;
+
+            }
+
+
+        }
+
+        function chonmh() {
+            var mh = document.getElementById("lstmh").value;
+            document.getElementById("txtgia").value = mh;
+        }
+    </script>
+</head>
+<body>
+    <!--1.BS Grid view
+        2. BS Navbar
+        3. BS Table
+        4.BS Form
+        5. BS Modal (2d
+        6. Javascript: Form: date, textbox, radio, checkbox, select, button
+         6.1: Tinh hop le cua textbox
+         6.2. lay gia tri radio, checkbox, select -> xu ly image, text, table
+         6.3: Insert du lieu vao table )-->
+
+
+
+    <div class="container" style=" border:1px solid #808080;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:100px;">
+                <h1>Bai 13 14 15 16</h1>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Page 1
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Page 1-1</a></li>
+                                    <li><a href="#">Page 1-2</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#" data-toggle="modal" data-target="#formDK">Page 3</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                Left
+            </div>
+            <div class="col-xs-8 col-sm-9 col-md-6 col-lg-6">
+
+                <input type="button" value="Open Modal" class="btn btn-danger" data-toggle="modal" data-target="#formDK" />
+
+                <table class="table table-hover" id="tblinfo">
+                    <tr>
+                        <th>Name</th>
+                        <th>Ngay sinh</th>
+                        <th>Gioitinh</th>
+                        <th>Ngon ngu</th>
+                        <th>Mon hoc</th>
+                        <th>hoc phi</th>
+                    </tr>
+
+
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                Right
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:100px;">
+                Logo
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Modal
+        1. class=modal fade
+        2. class= modal-dialog
+        3. class=modal-content -->
+
+    <div class="modal fade" id="formDK" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center text-danger">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h3>Form Dang ky online</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="frmdk" class="horizontal-form">
+                        <div class="form-group">
+                            <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                Name
+                            </label>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                <input type="text" id="txtten" onblur="ktraten()" placeholder="Name" class="form-control" />
+                                <span id="er1" class="text-danger">(*)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                Ngay sinh
+                            </label>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                <input type="date" id="txtns" onblur="ktrans()" class="form-control" />
+                                <span id="er2" class="text-danger">(*)</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                Gioi tinh
+                            </label>
+
+                            <input type="radio" class="radio-inline" name="gt" value="Nam" />Nam
+                            <input type="radio" class="radio-inline" name="gt" value="Nu" />Nu
+
+                        </div>
+                        <div class="form-group">
+                            <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                Ngon ngu
+                            </label>
+
+                            <input type="checkbox" class="checbox-inline" value="Anh" />Anh
+                            <input type="checkbox" class="checbox-inline" value="Phap" />Phap
+                            <input type="checkbox" class="checbox-inline" value="Trung" />Trung
+
+                        </div>
+                        <div class="form-group">
+                            <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                Mon hoc
+                            </label>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                <select class="form-control" id="lstmh" onchange="chonmh()">
+                                    <option value="120000">LTHDT</option>
+                                    <option value="15000">LT Java</option>
+                                    <option value="20000">Mang</option>
+                                </select>
+                                <br />
+                                <input type="text" id="txtgia" readonly />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                &nbsp;
+                            </label>
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                <input type="button" onclick="Dangky()" value="Dang ky" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="close" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

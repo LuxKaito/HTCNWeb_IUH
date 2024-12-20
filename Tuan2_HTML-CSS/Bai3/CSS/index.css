@@ -1,0 +1,14 @@
+* {
+    margin: 0 auto;
+}
+.main{
+    background-image: url(../IMAGE/background.jpg);
+    width: 100%; 
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    
+}
+.text{
+    text-align: center;
+}

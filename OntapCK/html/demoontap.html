@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-12 border border-1">
+                <img src="../img/logo.PNG" alt="" srcset="">
+            </div>
+
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-12 border border-1">
+                <ul class="nav justify-content-left">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-current="page">Trang chu</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Dang ky</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-12 border border-1">
+                <h3 class="text-center">LIST OF MEMBERS</h3>
+                <div class="table-responsive">
+                    <table class="table table-primary" id="tblds">
+
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Ho ten</th>
+                            <th scope="col">Gioi tinh</th>
+                            <th scope="col">Ngôn ngữ</th>
+                            <th scope="col">So dien thoai</th>
+                            <th scope="col">Ngày sinh</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col">Khoa hoc</th>
+                            <th scope="col">Hoc phí</th>
+
+                        </tr>
+
+
+
+                    </table>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-12 border border-1">MSSV - Ho ten - Lop - So may</div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <!--  Modal trigger button  -->
+    <!-- <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
+        Launch
+    </button> -->
+
+    <!-- Modal Body-->
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                        THÔNG TIN HỌC VIÊN
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <form>
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Ho va ten</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="txtht" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Gioi tinh</label>
+                                    <div class="col-8">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gioitinh" id="" value="Nam" />
+                                            <label class="form-check-label">Nam</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gioitinh" id="" value="Nữ" />
+                                            <label class="form-check-label">Nu</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Ngon ngữ</label>
+                                    <div class="col-8">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="" value="English" />
+                                            <label class="form-check-label">English</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="" value="France" />
+                                            <label class="form-check-label">France</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="" id="" value="China" />
+                                            <label class="form-check-label">China</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">So dien thoai</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="txtsdt" />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Ngay sinh</label>
+                                    <div class="col-8">
+                                        <input type="date" class="form-control" id="txtns" />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Dia chi</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="txtdc" />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Ban muon tham gia khoa hoc nao</label>
+                                    <div class="col-8">
+                                        <div class="mb-3">
+
+                                            <select class="form-select form-select-lg" name="" id="lstkh" onchange="Chonkh()">
+                                           
+                                            <option value="5000000">2 tuan</option>
+                                            <option value="8000000">4 tuan</option>
+                                            <option value="9000000">6 tuan</option>
+                                        </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Hoc phí</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="txthp" readonly/>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-4 col-form-label">Anh dai dien</label>
+                                    <div class="col-8">
+                                        <input type="file" class="form-control" id="txtdc" />
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="col-12 d-grid">
+                                        <button type="button" class="btn btn-success" onclick="Luu()">
+                                            Luu
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var i = 1;
+
+
+
+
+        function Luu() {
+            var ht, sdt, gt, dc, ns, kh, hp;
+            var nn = new Array(); // nhieu ngon ngu: Array
+
+            // ho ten: textbox
+            ht = document.getElementById("txtht").value;
+
+            //gioitinh : radio 
+            // duyệt radio  lấy value
+            var rad = document.querySelectorAll("input[type='radio']");
+            rad.forEach(function(ch) {
+                if (ch.checked) {
+                    gt = ch.value; // radio
+                }
+            })
+
+            // ngon ngữ: checkbox --> lấy value
+            // duyệt checkbox
+
+            var chk = document.querySelectorAll("input[type='checkbox']");
+            chk.forEach(function(ch) {
+                if (ch.checked) {
+                    nn.push(ch.value);
+                }
+            })
+
+
+            // so dien thoai: textbox
+            sdt = document.getElementById("txtsdt").value;
+            //ngay sinh : date
+            ns = document.getElementById("txtns").value;
+            // dia chi : textbox
+            dc = document.getElementById("txtdc").value;
+
+            // hocphi: textbox  -- > value cua option select lstkh
+            hp = document.getElementById("lstkh").value;
+
+            // hp = document.getElementById("txthp").value;
+
+            // khoa hoc: select : text cua option
+            // lay text cua option select lstkh
+            var sel = document.getElementById("lstkh");
+            var kh = sel.options[sel.selectedIndex].text;
+
+            //luu bang
+            // có bảng --> tạo row insertRow() --> tạo cột: insertCell()
+            var tbl = document.getElementById("tblds");
+
+            // tạo row
+            var row1 = tbl.insertRow(i);
+
+            var cot1 = row1.insertCell(0);
+            var cot2 = row1.insertCell(1);
+            var cot3 = row1.insertCell(2);
+            var cot4 = row1.insertCell(3); // ngon ngu checkbox
+
+
+            var cot5 = row1.insertCell(4);
+            var cot6 = row1.insertCell(5);
+            var cot7 = row1.insertCell(6);
+            var cot8 = row1.insertCell(7);
+            var cot9 = row1.insertCell(8);
+
+
+
+            cot1.innerHTML = i;
+            cot2.innerHTML = ht;
+            cot3.innerHTML = gt;
+            cot4.innerHTML = nn;
+            cot5.innerHTML = sdt;
+            cot6.innerHTML = ns;
+            cot7.innerHTML = dc;
+            cot8.innerHTML = kh;
+            cot9.innerHTML = hp;
+
+
+
+
+
+
+
+            i++;
+
+        }
+
+        function Chonkh() {
+            // alert("BBB");
+
+            // lay value cau lstkh --> xuat ra txthp
+            var hp = document.getElementById("lstkh").value;
+            document.getElementById("txthp").value = hp;
+
+        }
+    </script>
+
+</body>
+
+</html>

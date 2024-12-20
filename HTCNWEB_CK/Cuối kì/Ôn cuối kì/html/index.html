@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            color: #333;
+            line-height: 1.5;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #k1 {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="k1" class="container">
+        <!-- header -->
+        <div class="row">
+            <img src="../image/khoahoctaonline.png" alt="banner khoahoctaonline">
+        </div>
+
+        <!-- nav menu -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="#">Free English Course</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Khóa học</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal"
+                            data-target="#registrationModal">Đăng ký</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- body -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Điện thoại</th>
+                    <th>Email</th>
+                    <th>Khóa học</th>
+                    <th>Hình thức học</th>
+                    <th>Kỹ năng cần luyện</th>
+                </tr>
+            </thead>
+            <tbody id="registrationList">
+                <!-- Thông tin từ form modal sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registrationModalLabel">THÔNG TIN ĐĂNG KÝ</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registrationForm">
+                            <div class="form-group">
+                                <label for="name">Họ tên</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Ngày sinh</label>
+                                <input type="date" class="form-control" id="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Chọn khóa học</label>
+                                <select class="form-control" id="course" required>
+                                    <option value="Anh văn cơ bản">Anh văn cơ bản</option>
+                                    <option value="Anh văn nâng cao">Anh văn nâng cao</option>
+                                    <option value="Anh văn giao tiếp">Anh văn giao tiếp</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="studyTime">Thời gian học</label>
+                                <input type="text" class="form-control" id="studyTime" placeholder="e.g., Thứ 2, Thứ 4, Thứ 6, 18:00-20:00">
+                            </div>
+                            <div class="form-group">
+                                <label>Chọn hình thức học</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="studyType" id="studyCenter" value="Học tại trung tâm" required>
+                                    <label class="form-check-label" for="studyCenter">Học tại trung tâm</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="studyType" id="studyOnline" value="Học online" required>
+                                    <label class="form-check-label" for="studyOnline">Học online</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Các kỹ năng luyện tập</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="skillListening" value="Kỹ năng nghe">
+                                    <label class="form-check-label" for="skillListening">Kỹ năng nghe</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="skillReading" value="Kỹ năng đọc">
+                                    <label class="form-check-label" for="skillReading">Kỹ năng đọc</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="skillWriting" value="Kỹ năng viết">
+                                    <label class="form-check-label" for="skillWriting">Kỹ năng viết</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Đăng ký</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="row mt-2 bg-primary text-white">
+            <div class="col text-center">
+                <p>Thông tin sinh viên:</p>
+                <p>Hồ Phúc Lâm</p>
+                <p>22680401</p>
+                <p>DHCNTT18A</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#registrationForm').on('submit', function(e) {
+                e.preventDefault();
+                const name = $('#name').val();
+                const dob = $('#dob').val();
+                const phone = $('#phone').val();
+                const email = $('#email').val();
+                const course = $('#course').val();
+                const studyTime = $('#studyTime').val();
+                const studyType = $('input[name="studyType"]:checked').val();
+                const skills = [];
+                $('input[type="checkbox"]:checked').each(function() {
+                    skills.push($(this).val());
+                });
+
+                const newRow = `
+                    <tr>
+                        <td>${$('#registrationList tr').length + 1}</td>
+                        <td>${name}</td>
+                        <td>${dob}</td>
+                        <td>${phone}</td>
+                        <td>${email}</td>
+                        <td>${course}</td>
+                        <td>${studyType}</td>
+                        <td>${skills.join(', ')}</td>
+                    </tr>
+                `;
+                $('#registrationList').append(newRow);
+
+                $('#registrationModal').modal('hide');
+                $('#registrationForm')[0].reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

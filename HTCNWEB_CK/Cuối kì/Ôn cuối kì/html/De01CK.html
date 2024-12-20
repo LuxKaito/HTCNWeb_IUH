@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De 01 | ve may bay</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="border: 1px solid blue;">
+        <div class="row">
+            <div class="col-12">
+                <img src="../image/vemaybay.png" alt="vemaybay" class="w-100 h-100">
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Trag chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-target="#modalDangKy" data-toggle="modal">Đăng ký</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên KH</th>
+                    <th>Hình CMND</th>
+                    <th>Ngày đi</th>
+                    <th>SĐT</th>
+                    <th>Phụ thu hành lý</th>
+                    <th>Hình thức thanh toán</th>
+                </tr>
+            </thead>
+            <tbody id="dsdk">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+                <!-- hien thị table row bằng js -->
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalDangKy" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">ĐẶT VÉ TRỰC TUYẾN</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" id="formDangKy" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="name">Họ tên KH</label>
+                                <input type="text" name="name" id="name" class="form-control">
+                                <span class="form-message text-danger" id="nameEro"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="imageCMND">Hinh CMND</label>
+                                <input type="file" name="imageCMND" id="imageCMND" class="form-control"
+                                    accept=".jpg, .gif, .png">
+                                <span class="form-message text-danger" id="imageCMNDEro"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ngaydi">Ngay di</label>
+                                <input type="date" name="ngaydi" id="ngaydi" class="form-control">
+                                <span class="form-message text-danger" id="ngaydiEro"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">So dien thoai</label>
+                                <input type="tel" name="phone" id="phone" class="form-control" maxlength="10">
+                                <span class="form-message text-danger" id="phoneEro"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vali">Hanh ly ky gui</label>
+                                <select name="vali" id="vali" class="form-control">
+                                    <option value="15 KG">15 KG</option>
+                                    <option value="21 KG">21 KG</option>
+                                    <option value="35 KG">35 KG</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phuthu">Phu thu hanh ly</label>
+                                <input type="text" name="phuthu" id="phuthu" class="form-control" readonly
+                                    value="210000">
+                            </div>
+
+                            <div class="form-group-inline">
+                                <label for="thanhtoan">Hinh thuc thanh toan</label>
+                                <input type="radio" name="thanhtoan" id="thanhtoanCK" class=""
+                                    value="Chuyển khoản">Chuyen khoan
+                                <input type="radio" name="thanhtoan" id="thanhtoanTM" class="" value="Tiền mặt">Tien Mat
+                                <span class="form-message text-danger" id="thanhtoanEro"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Dat ve</button>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-primary text-center">
+            <div class="col">
+                <p>Hồ Phúc Lâmm</p>
+                <p>22680401</p>
+                <p>DHCNTT18A</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        function checkName() {
+            var name = $('#name').val();
+            var re = /^[A-ZÀ-Ỹ][a-zà-ỹ]{1,}(\s+[A-ZÀ-Ỹ][a-zà-ỹ]{1,})*$/;
+            if (!re.test(name)) {
+                $('#nameError').text('Họ tên phải in hoa, ít nhất 2 từ');
+                $('#name').focus();
+                return false;
+            } else {
+                $('#nameError').text('');
+            }
+            return true;
+        }
+
+        function checkDate() {
+            var ngaydi = $('#ngaydi').val();
+            var currentDate = new Date();
+            var inputDate = new Date(ngaydi);
+
+            // Thêm một ngày vào currentDate để kiểm tra điều kiện ngày đi phải sau ngày hiện tại ít nhất một ngày
+            currentDate.setDate(currentDate.getDate() + 1);
+
+            if (inputDate <= currentDate) {
+                $('#ngaydiError').text('Ngày đi phải sau ngày hiện tại từ 1 ngày trở lên');
+                $('#ngaydi').focus();
+                return false;
+            } else {
+                $('#ngaydiError').text('');
+            }
+            return true;
+        }
+
+        function checkPhone() {
+            var phone = $('#phone').val();
+            var re = /^(09|08|03)+[0-9]{8}$/;
+            if (!re.test(phone)) {
+                $('#phoneError').text('Số điện thoại gồm 10 chữ số trong đó 2 chữ số đầu là 09, 08 hoặc 07 và theo sau là 8 chữ số.');
+                $('#phone').focus();
+                return false;
+            } else {
+                $('#phoneError').text('');
+            }
+            return true;
+        }
+
+        function checkVali() {
+            var vali = $('#vali').val();
+            var tien = '';
+
+            switch (vali) {
+                case '15 KG':
+                    tien = 210000;
+                    break;
+                case '21 KG':
+                    tien = 250000;
+                    break;
+                case '35 KG':
+                    tien = 300000;
+                    break;
+                default:
+                    tien = 0;
+                    break;
+            }
+            $('#phuthu').val(tien);
+            return true;
+        }
+
+        function checkthanhtoan() {
+            var tt = $('input[name="thanhtoan"]:checked').val();
+            if (!tt) {
+                $('#thanhtoanError').text('Phải chọn 1 hình thức thanh toán');
+                return false;
+            } else {
+                $('#thanhtoanError').text('');
+                return true;
+            }
+        }
+
+        $('#formDangKy').submit(function (event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của form khi được submit
+            if (checkName() && checkPhone() && checkDate() && checkVali() && checkthanhtoan()) {
+                thuchiendatve(); // Gọi hàm thuchiendatve() khi form hợp lệ
+            }
+        });
+
+        function thuchiendatve() {
+            var name = $('#name').val();
+            var phone = $('#phone').val();
+            var ngaydi = $('#ngaydi').val();
+            var phuthu = $('#phuthu').val();
+            var tt = $('input[name="thanhtoan"]:checked').val();
+
+            // Lấy hình ảnh đã chọn
+            var image = $('#imageCMND').prop('files')[0];
+            var imageURL = URL.createObjectURL(image); // Tạo URL của hình ảnh đã chọn
+
+            // Tạo một chuỗi HTML cho một hàng mới trong bảng
+            var newRow = `
+                <tr>
+                    <td>${$('#dsdk tr').length + 1}</td>
+                    <td>${name}</td>
+                    <td><img src="${imageURL}" alt="CMND" style="height: 50px; wight: 50px"></td>
+                    <td>${ngaydi}</td>
+                    <td>${phone}</td>
+                    <td>${phuthu}</td>
+                    <td>${tt}</td>
+                </tr>
+            `;
+
+            // Thêm hàng mới vào bảng
+            $("table tbody").append(newRow);
+
+            $('#modalDangKy').modal('hide'); // Đóng modal sau khi thêm dữ liệu vào bảng
+        }
+    });
+</script>

@@ -1,0 +1,209 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 70%;
+    border: 1px solid #29507b;
+}
+
+header {
+    height: 110px;
+    background-color: #29507b;
+    color: white;
+    display: flex;
+    position: relative;
+}
+
+header img {
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 15px;
+    position: absolute;
+}
+
+header .logo {
+    font-size: 18px;
+    top: 15px;
+    left: 85px;
+    position: absolute;
+}
+
+header nav {
+    width: 60%;
+}
+
+nav .menu {
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+
+}
+
+nav .menu li {
+    display: inline-table;
+    background-color: #3872b0;
+    margin-left: 10px;
+    padding-right: 15px;
+    padding: 15px 14px;
+}
+
+nav .menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+nav .menu li:hover {
+    background-color: red;
+}
+
+header .search {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+header .search input {
+    width: 230px;
+    margin-right: 10px;
+}
+
+header .search button {
+    width: 30px;
+}
+
+header .search input, 
+header .search button {
+    height: 25px;
+    background-color: #143a63;
+    color: white;
+}
+
+header .search input::placeholder {
+    color: white;
+}
+
+main {
+    height: 500px;
+    display: flex;
+}
+
+/* left */
+main .left {
+    width: 70%;
+    margin: 10px;
+}
+
+main .left h2 {
+    display: block;
+    border-bottom: 5px dotted black;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+main .left .form {
+    width: 55%;
+}
+
+main .left .form h4 {
+    text-align: justify;
+    color: orange;
+    text-shadow: 2px 2px 0px gray;
+}
+
+main .left .form label {
+    display: inline-table;
+    width: 49%;
+}
+
+main .left .form input {
+    margin-top: 5px;
+    width: 160px;
+    height: 25px;
+    margin-left: 5px;
+    background-color: #f7f7f7;
+    border: 2px solid #e3e3e3;
+}
+main .left .form button {
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: #f7f7f7;
+    border: 2px solid #e3e3e3;
+}
+main .left .form textarea{
+    width: 100%;
+    height: 70px;
+    
+    background-color: #f7f7f7;
+    border: 2px solid #e3e3e3;
+}
+.text-a label {
+    display: block;
+}
+
+main .left .form label {
+    margin-top: 15px;
+}
+
+main .left .form .btn input {
+    margin-top: 15px;
+}
+
+main .left .infor {
+    width: 35%;
+}
+
+main .left .infor h2 {
+    border-bottom: 3px dotted black;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+main .form-infor {
+    display: flex;
+}
+
+/* right */
+main .right {
+    margin-top: 40px;
+    width: 30%;
+    margin-right: 30px;
+    margin-left: 20px;
+    background-color: #f8f8f8;
+    height: 400px;
+    padding: 20px;
+}
+
+main .right h2 {
+    border-bottom: 3px dotted black;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+main .right img {
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+main .right span {
+    float: right;
+    color: #29507b;
+    font-weight: 700;
+}
+
+footer {
+    height: 50px;
+    margin-top: 30px;
+    background-color: #29507b;
+    color: white;
+}
+
+footer p {
+    line-height: 50px;
+    text-align: center;
+}

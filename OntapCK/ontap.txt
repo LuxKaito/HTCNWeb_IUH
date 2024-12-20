@@ -1,0 +1,14 @@
+1. Thiết kế: Sử dụng Extension VS Code 
+Install 2 plug in: Boostrap 5 
+
+bs5-container
+bs5-grid-row
+bs5-grid-col
+
+bs5-navbar-ul
+bs5-table-default (xóa thead, tbody, chỉnh sửa theo nội dung....)
+bs5-modal-grid
+bs5-form-grid
+bs5-form-group
+
+

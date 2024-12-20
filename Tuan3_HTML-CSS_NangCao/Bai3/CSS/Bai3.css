@@ -1,0 +1,155 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* wrapper */
+.wrapper {
+    width: 70%;
+    /* height: 800px; */
+    border: 1px solid black;
+}
+
+/* header  */
+header {
+    height: 70px;
+    background-color: #ad4c15;
+}
+
+header h1 {
+    color: #817a00;
+    text-shadow: 2px 2px 2px white;
+}
+
+/* nav  */
+nav {
+    height: 25px;
+}
+
+nav li {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+nav li:hover {
+    background-color: orange;
+}
+
+nav a {
+    color: orange;
+    text-decoration: none;
+}
+
+/* main  */
+main {
+    height: 550px;
+}
+
+main .la-cay {
+    height: 150px;
+    background-image: url(../IMAGE/line.png);
+}
+
+.main {
+    display: flex;
+    padding: 15px;
+}
+
+/* content */
+main .content {
+    width: 70%;
+    border-right: 1px solid black;
+}
+
+main .content h2 {
+    color: #9e7d2c;
+}
+
+main .content p {
+    color: #bfb56e;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+main form input {
+    display: block;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    width: 80%;
+    padding: 10px;
+}
+
+#button-sign {
+    background-color: #808000;
+    padding: 5px;
+    color: white;
+    border: none;
+    display: inline-block;
+    width: 100px;
+    margin-top: 40px;
+    margin-left: 70px;
+}
+
+/* right */
+main .right {
+    width: 30%;
+    padding: 20px;
+}
+
+main .right ul {
+    list-style-type: square;
+    margin-left: 40px;
+}
+
+main .right h2 {
+    margin: 20px 0;
+    color: #4d3c40;
+}
+
+main .right .top {
+    background-color: #fde9d4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 0 10px;
+}
+
+.bot .ben-ngoai-anh {
+    padding: 5px;
+    border: 1px solid black;
+    float: left;
+    width: 60px;
+    margin: 10px;
+}
+
+.bot .ben-ngoai-anh img {
+    width: 100%;
+    margin: auto;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 66px;
+    /* background-image: url(img/corner1.png), url(img/corner3.png),
+      url(img/corner2.png), url(img/footer.png), url(img/corner4.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat-x, no-repeat;
+    background-size: 80px, 90px, 100px, 210px, 105px;
+    background-position: top left, top right, bottom left, top, bottom right; */
+    background-image: url(../IMAGE/corner1.png), url(../IMAGE/corner2.png), url(../IMAGE/corner3.png), url(../IMAGE/corner4.png), url(../IMAGE/footer.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
+    background-size: 80px, 80px, 80px, 140px, 200px;
+    background-position: top left, bottom left, top right, top right, top;
+}
+
+footer h3 {
+    text-align: center;
+    line-height: 60px;
+}

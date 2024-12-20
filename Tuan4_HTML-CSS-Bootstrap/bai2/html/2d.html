@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2d</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    [class*="col"] {
+      padding: 0;
+      margin: 0;
+    }
+
+    .form-border {
+      border: 2px solid gray;
+      margin-top: 10px;
+      padding: 19px;
+      /* Padding inside the form */
+    }
+
+    .valid-feedback {
+      color: green;
+    }
+
+    .invalid-feedback {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container w-50">
+    <form class="form-border needs-validation" novalidate> <!-- Bootstrap needs-validation class -->
+      <div class="row">
+        <div class="col-4 px-1">
+          <label for="first-name">First name</label>
+          <input class="form-control" type="text" id="first-name" placeholder="Mark" required />
+          <div class="invalid-feedback">Please enter your first name.</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-4 px-1">
+          <label for="last-name">Last name</label>
+          <input class="form-control" type="text" id="last-name" placeholder="Otto" required />
+          <div class="invalid-feedback">Please enter your last name.</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-4 px-1">
+          <label for="username">Username</label>
+          <input class="form-control" type="text" id="username" placeholder="Username" required />
+          <div class="invalid-feedback">Please choose a username.</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-6 px-1">
+          <label for="city">City</label>
+          <input class="form-control" type="text" id="city" placeholder="City" required />
+          <div class="invalid-feedback">Please provide a valid city.</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-3 px-1">
+          <label for="state">State</label>
+          <input class="form-control" type="text" id="state" placeholder="State" required />
+          <div class="invalid-feedback">Please provide a valid state.</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-3 px-1">
+          <label for="zip">Zip</label>
+          <input class="form-control" type="text" id="zip" placeholder="Zip" required />
+          <div class="invalid-feedback">Please provide a valid zip.</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <input type="checkbox" class="m-1" id="terms" required /> Agree to terms and conditions
+        <div class="invalid-feedback">You must agree before submitting.</div>
+      </div>
+      <br>
+      <div class="row">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      'use strict'; // Kích hoạt chế độ "nghiêm ngặt" của JavaScript để tránh các lỗi phổ biến.
+
+      // Lấy tất cả các form có class 'needs-validation'
+      var forms = document.querySelectorAll('.needs-validation');
+
+      // Chuyển NodeList thành mảng và lặp qua từng form
+      Array.prototype.slice.call(forms).forEach(function (form) {
+
+        // Thêm sự kiện 'submit' cho mỗi form
+        form.addEventListener(
+          'submit',
+          function (event) {
+
+            // Kiểm tra tính hợp lệ của form
+            if (!form.checkValidity()) {
+              // Ngăn form được submit nếu không hợp lệ
+              event.preventDefault();
+              // Ngăn sự kiện lan ra ngoài các phần tử khác
+              event.stopPropagation();
+            }
+
+            // Thêm class 'was-validated' để áp dụng các quy tắc CSS hiển thị lỗi
+            form.classList.add('was-validated');
+          },
+          false // Sự kiện lắng nghe ở giai đoạn bubbling (ngược từ con đến cha)
+        );
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

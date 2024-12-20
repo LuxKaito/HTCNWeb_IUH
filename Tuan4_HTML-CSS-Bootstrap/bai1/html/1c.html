@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1c</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <!-- reset -->
+  <style>
+    [class*="col"] {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      border-radius: 100%;
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    .pos-down {
+      position: relative;
+      top: 10px;
+    }
+
+    /* Add shadow and border to the table */
+    .table-container {
+      margin-top: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0px 8px black;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container table-container">
+    <table class="table table-hover">
+      <thead class="table-secondary">
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>title</th>
+          <th>status</th>
+          <th>postion</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4">
+            <div class="wrap d-flex">
+              <div class="img"><img src="../img/c1.png" alt="" /></div>
+              <div>
+                <h5>lorem lorem</h5>
+                <p class="text-secondary">lorem lorem lorem</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <h5>lorem lorem</h5>
+            <p class="text-secondary">lorem lorem lorem</p>
+          </td>
+          <td>
+            <span class="badge bg-success pos-down">Active</span>
+          </td>
+          <td>
+            <p class="pos-down">Senior</p>
+          </td>
+          <td>
+            <button class="btn btn-link">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <div class="wrap d-flex">
+              <div class="img"><img src="../img/c2.png" alt="" /></div>
+              <div>
+                <h5>lorem lorem</h5>
+                <p class="text-secondary">lorem lorem lorem</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <h5>lorem lorem</h5>
+            <p class="text-secondary">lorem lorem lorem</p>
+          </td>
+          <td>
+            <span class="badge bg-primary pos-down">Active</span>
+          </td>
+          <td>
+            <p class="pos-down">Senior</p>
+          </td>
+          <td>
+            <button class="btn btn-link">EDIT</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <div class="wrap d-flex">
+              <div class="img"><img src="../img/c3.png" alt="" /></div>
+              <div>
+                <h5>lorem lorem</h5>
+                <p class="text-secondary">lorem lorem lorem</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <h5>lorem lorem</h5>
+            <p class="text-secondary">lorem lorem lorem</p>
+          </td>
+          <td>
+            <span class="badge bg-warning pos-down">Active</span>
+          </td>
+          <td>
+            <p class="pos-down">Senior</p>
+          </td>
+          <td>
+            <button class="btn btn-link">EDIT</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

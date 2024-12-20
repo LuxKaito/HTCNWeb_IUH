@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2a</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <style>
+    [class*="col"] {
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .container {
+      width: 600px;
+    }
+
+    .toLeft {
+      text-indent: -15px;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .light-blue {
+      background-color: #f6f9ff;
+    }
+
+    .form-border {
+      border: 2px solid lightblue;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="#" class="form-border">
+      <div class="light-blue p-4">
+        <div class="check-out">
+          <div class="border-bottom">
+            <h3 class="toLeft">Checkout</h3>
+          </div>
+          <div class="row mt-1 py-1">
+            <div class="col-9">
+              <h4>Product 1</h4>
+              <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="col-3">
+              <h4 class="pt-3">$200</h4>
+            </div>
+          </div>
+          <div class="row mt-1 py-1">
+            <div class="col-9">
+              <h4>Product 2</h4>
+              <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="col-3">
+              <h4 class="pt-3">$120</h4>
+            </div>
+          </div>
+          <div>
+            <div class="row mt-1 border-top py-1">
+              <div class="col-9">
+                <h4>Total</h4>
+              </div>
+              <div class="col-3">
+                <h4>$320</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="credit border-bottom p-5 pt-0">
+        <div class="h3 toLeft">Credit Card Detail</div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-7">
+              <label for="card" class="">CARD HOLDER</label>
+              <input type="text" class="form-control" placeholder="Card Holder" />
+            </div>
+            <div class="col-4">
+              <label for="exper">EXPERATION DATE</label>
+              <div class="row form-group d-flex justify-content-center">
+                <input type="text" class="col-5 form-control pl-2" placeholder="MM" />
+                <span class="col-1 d-flex align-items-center justify-content-center">/</span>
+                <input type="text" class="col-5 form-control pl-2" placeholder="YY" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-7">
+              <label for="card-number"> CARD NUMBER </label>
+              <input type="text" class="form-control" placeholder="Card Number" />
+            </div>
+            <div class="col-4">
+              <label for="card-number"> CVC </label>
+              <input type="text" class="form-control" placeholder="CVC" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary text-white w-100">
+        Process
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>
