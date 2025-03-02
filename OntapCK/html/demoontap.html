@@ -21,8 +21,7 @@
             <div class="col-12 border border-1">
                 <ul class="nav justify-content-left">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" aria-current="page">Trang chu</a
-                        >
+                        <a class="nav-link" href="#" aria-current="page">Trang chu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Dang ky</a>
@@ -98,11 +97,13 @@
                                     <label class="col-4 col-form-label">Gioi tinh</label>
                                     <div class="col-8">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gioitinh" id="" value="Nam" />
+                                            <input class="form-check-input" type="radio" name="gioitinh" id=""
+                                                value="Nam" />
                                             <label class="form-check-label">Nam</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gioitinh" id="" value="Nữ" />
+                                            <input class="form-check-input" type="radio" name="gioitinh" id=""
+                                                value="Nữ" />
                                             <label class="form-check-label">Nu</label>
                                         </div>
 
@@ -114,15 +115,18 @@
                                     <label class="col-4 col-form-label">Ngon ngữ</label>
                                     <div class="col-8">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="" id="" value="English" />
+                                            <input class="form-check-input" type="checkbox" name="" id=""
+                                                value="English" />
                                             <label class="form-check-label">English</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="" id="" value="France" />
+                                            <input class="form-check-input" type="checkbox" name="" id=""
+                                                value="France" />
                                             <label class="form-check-label">France</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="" id="" value="China" />
+                                            <input class="form-check-input" type="checkbox" name="" id=""
+                                                value="China" />
                                             <label class="form-check-label">China</label>
                                         </div>
 
@@ -156,12 +160,13 @@
                                     <div class="col-8">
                                         <div class="mb-3">
 
-                                            <select class="form-select form-select-lg" name="" id="lstkh" onchange="Chonkh()">
-                                           
-                                            <option value="5000000">2 tuan</option>
-                                            <option value="8000000">4 tuan</option>
-                                            <option value="9000000">6 tuan</option>
-                                        </select>
+                                            <select class="form-select form-select-lg" name="" id="lstkh"
+                                                onchange="Chonkh()">
+
+                                                <option value="5000000">2 tuan</option>
+                                                <option value="8000000">4 tuan</option>
+                                                <option value="9000000">6 tuan</option>
+                                            </select>
                                         </div>
 
                                     </div>
@@ -170,7 +175,7 @@
                                 <div class="mb-3 row">
                                     <label class="col-4 col-form-label">Hoc phí</label>
                                     <div class="col-8">
-                                        <input type="text" class="form-control" id="txthp" readonly/>
+                                        <input type="text" class="form-control" id="txthp" readonly />
                                     </div>
                                 </div>
 
@@ -222,7 +227,7 @@
             //gioitinh : radio 
             // duyệt radio  lấy value
             var rad = document.querySelectorAll("input[type='radio']");
-            rad.forEach(function(ch) {
+            rad.forEach(function (ch) {
                 if (ch.checked) {
                     gt = ch.value; // radio
                 }
@@ -232,7 +237,7 @@
             // duyệt checkbox
 
             var chk = document.querySelectorAll("input[type='checkbox']");
-            chk.forEach(function(ch) {
+            chk.forEach(function (ch) {
                 if (ch.checked) {
                     nn.push(ch.value);
                 }
